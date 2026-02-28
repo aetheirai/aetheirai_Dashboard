@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 80 44% 4%;
+    --foreground: 240 100% 99%;
+
+    --card: 80 30% 7%;
+    --card-foreground: 240 100% 99%;
+
+    --popover: 80 30% 7%;
+    --popover-foreground: 240 100% 99%;
+
+    --primary: 73 100% 30%;
+    --primary-foreground: 80 44% 4%;
+
+    --secondary: 78 44% 35%;
+    --secondary-foreground: 240 100% 99%;
+
+    --muted: 78 20% 14%;
+    --muted-foreground: 78 15% 55%;
+
+    --accent: 73 52% 70%;
+    --accent-foreground: 80 44% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 240 100% 99%;
+
+    --border: 78 20% 15%;
+    --input: 78 20% 12%;
+    --ring: 73 100% 30%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 80 30% 6%;
+    --sidebar-foreground: 240 100% 99%;
+    --sidebar-primary: 73 100% 30%;
+    --sidebar-primary-foreground: 80 44% 4%;
+    --sidebar-accent: 78 20% 12%;
+    --sidebar-accent-foreground: 240 100% 99%;
+    --sidebar-border: 78 20% 15%;
+    --sidebar-ring: 73 100% 30%;
+
+    --glass: 78 30% 10%;
+    --glass-border: 78 30% 20%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-[hsl(var(--glass)/0.4)] backdrop-blur-xl border border-[hsl(var(--glass-border)/0.3)] rounded-2xl;
+  }
+
+  .glass-panel-strong {
+    @apply bg-[hsl(var(--glass)/0.6)] backdrop-blur-2xl border border-[hsl(var(--glass-border)/0.4)] rounded-2xl;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 40px -10px hsl(73 100% 30% / 0.3);
+  }
+
+  .glow-primary-sm {
+    box-shadow: 0 0 20px -5px hsl(73 100% 30% / 0.2);
+  }
+
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-[hsl(73,100%,30%)] to-[hsl(73,52%,70%)] bg-clip-text text-transparent;
+  }
+}
